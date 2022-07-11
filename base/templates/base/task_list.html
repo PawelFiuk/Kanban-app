@@ -1,9 +1,11 @@
 <h1>My To Do List</h1>
+<a href="{% url 'tasks-create' %}">Add Task</a>
 
 <div id="list_of_tasks">
     <p1>Item</p1>
-    {% for task in tasks%} </br>
+    {% for task in tasks %} </br>
     <p2>{{task.title}}</p2>
+    <a href="{% url 'task' task.id %}">View</a>
     {% empty %}
         <h3>No items in list</h3>
     {% endfor %}
