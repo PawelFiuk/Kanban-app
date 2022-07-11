@@ -6,6 +6,8 @@
     {% for task in tasks %} </br>
     <p2>{{task.title}}</p2>
     <a href="{% url 'task' task.id %}">View</a>
+    <a href="{% url 'tasks-update' task.id %}">Update</a>
+    <a href="{% url 'tasks-delete' task.id %}">Delete</a>
     {% empty %}
         <h3>No items in list</h3>
     {% endfor %}
