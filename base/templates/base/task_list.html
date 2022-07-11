@@ -1,0 +1,10 @@
+<h1>My To Do List</h1>
+
+<div id="list_of_tasks">
+    <p1>Item</p1>
+    {% for task in tasks%} </br>
+    <p2>{{task.title}}</p2>
+    {% empty %}
+        <h3>No items in list</h3>
+    {% endfor %}
+</div>
