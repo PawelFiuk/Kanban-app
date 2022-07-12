@@ -1,8 +1,15 @@
+
+{% if request.user.is_authenticated %}
+    <p>{{request.user}}</p>
+    <a href="{% url 'logout' %}">Logout</a>
+{% else %}
+<a href="{% url 'login' %}">Login</a>
+{% endif %}
 <h1>My To Do List</h1>
 <a href="{% url 'tasks-create' %}">Add Task</a>
 
 <div id="list_of_tasks">
-    <p1>Item</p1>
+    <h1>TASKS</h1>
     {% for task in tasks %} </br>
     <p2>{{task.title}}</p2>
     <a href="{% url 'task' task.id %}">View</a>
